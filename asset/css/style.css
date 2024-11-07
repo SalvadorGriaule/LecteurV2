@@ -1,0 +1,61 @@
+@font-face {
+    font-family: overpass;
+    src: url("../tff/Overpass-VariableFont_wght.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    font-family: overpass;
+    background: rgb(214, 53, 1);
+    background: linear-gradient(0deg, rgba(214, 53, 1, 1) 0%, rgba(222, 90, 0, 1) 25%, rgba(224, 141, 0, 1) 50%, rgba(222, 90, 0, 1) 75%, rgba(214, 53, 1, 1) 100%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#commande {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-block-start: 1vh;
+
+}
+
+#Timer {
+    margin-block-start: 1vh;
+    height: 2vh;
+    background-color: white;
+    width: 100%;
+}
+
+#Timed {
+    height: 2vh;
+    background-color: rgb(214, 53, 1);
+}
+
+#playlist {
+    margin-block-start: 2vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+    padding: 1vh 1vw;
+    border-radius: 15px;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    margin-block-end: 1vh;
+    padding: .35rem;
+}
+
+.track:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}

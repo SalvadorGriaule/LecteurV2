@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="linéaire.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="false"
+     inkscape:zoom="1.5642659"
+     inkscape:cx="352.2419"
+     inkscape:cy="372.69878"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:#acacac;stroke-width:0"
+       id="rect790"
+       width="2.7377563"
+       height="23.81848"
+       x="118.81862"
+       y="76.3834"
+       inkscape:export-filename="lineaire.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#949494;fill-opacity:1;stroke:#acacac;stroke-width:0"
+       id="rect792"
+       width="65"
+       height="14.294523"
+       x="72.5"
+       y="65.706146" />
+    <rect
+       style="fill:#949494;fill-opacity:1;stroke:#acacac;stroke-width:0"
+       id="rect792-8"
+       width="65"
+       height="14.294523"
+       x="72.5"
+       y="83.558891" />
+    <rect
+       style="fill:#949494;fill-opacity:1;stroke:#acacac;stroke-width:0"
+       id="rect792-3"
+       width="65"
+       height="14.294523"
+       x="72.5"
+       y="101.41162" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Calque 2"
+     style="display:inline">
+    <rect
+       style="fill:#acacac;fill-opacity:1;stroke:#fffffe;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1978"
+       width="24.358232"
+       height="41.314011"
+       x="92.820885"
+       y="60.04295" />
+    <path
+       sodipodi:type="star"
+       style="mix-blend-mode:normal;fill:#acacac;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path2034"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="60.600452"
+       sodipodi:cy="74.87986"
+       sodipodi:r1="12.246829"
+       sodipodi:r2="6.1234145"
+       sodipodi:arg1="-2.6206829"
+       sodipodi:arg2="-1.5734853"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 49.97796,68.784987 71.190013,68.727948 60.633384,87.126645 Z"
+       inkscape:transform-center-x="0.02635907"
+       inkscape:transform-center-y="3.2109316"
+       transform="matrix(1.5980183,0,0,1.0536505,8.1865423,27.361955)" />
+  </g>
+</svg>
