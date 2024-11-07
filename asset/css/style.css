@@ -15,23 +15,30 @@ main {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 #commande {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     justify-content: space-between;
     margin-block-start: 1vh;
+    width: 300px;
+}
 
+#commandeBtn{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 #Timer {
     margin-block-start: 1vh;
     height: 2vh;
     background-color: white;
-    width: 100%;
+    width: 300px;
 }
 
 #Timed {
@@ -46,6 +53,8 @@ main {
     backdrop-filter: blur(5px);
     padding: 1vh 1vw;
     border-radius: 15px;
+    width: 300px;
+    overflow-y: scroll;
 }
 
 .track {
@@ -55,7 +64,35 @@ main {
     padding: .35rem;
 }
 
+#GrpDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-end: 1.5vh;    
+}
+
 .track:hover {
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 10px;
+}
+
+@media screen and (min-width:720px) {  
+    main{
+        flex-direction: column-reverse;
+        
+    }
+    #playlist{
+        border-start-start-radius: 0;
+        border-start-end-radius: 0;
+        margin-block-start: 0;
+        
+        width: 100%;
+        height: 100%;
+    }
+    #parent{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        margin-block: 2vh;
+    }
 }

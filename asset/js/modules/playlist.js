@@ -38,5 +38,5 @@ export const playlist = () => {
     const divPL = document.createElement("div");
     divPL.id = "playlist"
     tabPL(tracklist,divPL)
-    document.querySelector("#parent").append(divPL)
+    document.querySelector("#parent").after(divPL)
 }

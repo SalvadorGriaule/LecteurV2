@@ -100,3 +100,10 @@ img {
 .textFade {
     transition: all .5s;
 }
+
+@media screen and (min-width:720px) {  
+    #carousel{
+        width: 220px;
+        height: 220px;
+    }
+}

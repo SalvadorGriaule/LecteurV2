@@ -1,4 +1,10 @@
 const initImg = () => {
+    
+    const square = (number) => {
+        fixedImage.width = moveImage.width = number;
+        fixedImage.height = moveImage.height = number;
+    }
+    
     //console.dir(carousel);
     const fixedImage = document.createElement("img");
     fixedImage.classList.add("fixedImage");
@@ -9,8 +15,22 @@ const initImg = () => {
     moveImage.classList.add("moveImage");
     moveImage.src = `./asset/img/cover/${dataSlider[currentImg].urlImg}`;
     carousel.append(moveImage);
-    fixedImage.width = moveImage.width = 300;
-    fixedImage.height = moveImage.height = 300;
+    if (window.innerWidth >= 720) {
+        square(220);
+    } else {
+        square(300)
+    }
 
+    const resize = () => {
+        console.log(window.innerWidth);
+        if (window.innerWidth >= 720) {
+            square(220);
+        } else {
+            square(300)
+        }
+    }
+
+    window.onresize = resize;
 }
+
 export { initImg }  

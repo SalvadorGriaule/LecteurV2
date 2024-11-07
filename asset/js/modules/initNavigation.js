@@ -49,10 +49,13 @@ const timePlayer = () => {
     if (!interval) {
         interval = setInterval(timeProg, 100, p)
     }
+    const divTime = document.createElement("div");
 
-    document.getElementById("parent").append(p)
+    divTime.append(p)
     divTimer.append(divTimed)
-    document.getElementById("parent").append(divTimer);
+    divTime.append(divTimer);
+    document.querySelector("#commande").append(divTime)
+    divTime.id = "GrpDiv"
     divTimer.id = "Timer";
     divTimed.id = "Timed"
     divTimer.addEventListener("click", (e) => {
@@ -111,25 +114,27 @@ const initNavigation = () => {
     const commande = document.createElement("div")
     commande.id = "commande";
     document.getElementById("parent").append(commande)
-
-    const divNext = createNavBtn(commande, "divNext", "fa-caret-right");
+    const divBtn = document.createElement("div")
+    divBtn.id = "commandeBtn"
+    commande.append(divBtn)
+    const divNext = createNavBtn(divBtn, "divNext", "fa-caret-right");
     divNext.addEventListener("click", shuffleTrack)
     
-    const divPlay = createNavBtn(commande, "divPlay", "fa-play");
+    const divPlay = createNavBtn(divBtn, "divPlay", "fa-play");
     divPlay.addEventListener("click", () => {
         currentTrack.paused ? currentTrack.play() : currentTrack.pause()
         divPlay.querySelector("i").classList.toggle("fa-play");
         divPlay.querySelector("i").classList.toggle("fa-pause");
     })
 
-    const divSense = createNavBtn(commande, "divSense", "fa-arrow-right-long")
+    const divSense = createNavBtn(divBtn, "divSense", "fa-arrow-right-long")
     divSense.addEventListener("click", () => {
         modeLect = !modeLect;
         divSense.querySelector("i").classList.toggle("fa-arrow-right-long");
         divSense.querySelector("i").classList.toggle("fa-shuffle");
     })
 
-    const divPrev = createNavBtn(commande, "divPrev", "fa-caret-left");
+    const divPrev = createNavBtn(divBtn, "divPrev", "fa-caret-left");
     divPrev.addEventListener("click", backTrack)
    
     timePlayer()
