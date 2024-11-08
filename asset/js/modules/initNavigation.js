@@ -23,6 +23,21 @@ const createNavBtn = (target, className, faClass) => {//next->fa-caret-right
 
 const changTxt = () => {
     //divT = div>(h2+p)
+    if (window.innerWidth > 1080) {
+        document.querySelector("#div1080>div:last-of-type").classList.add("textFade");
+        document.querySelector("#div1080>div:last-of-type").classList.add("fardIn");
+        let infoP = document.querySelectorAll("#div1080>div:last-of-type p")
+        console.log(infoP);
+        setTimeout(() => {
+            document.querySelector("#div1080>div:last-of-type").classList.remove("fardIn");
+            document.querySelector("#div1080>div:last-of-type").classList.add("fardOut");
+            infoP[0].textContent = tracklist[currentImg].titre;
+            infoP[1].textContent = tracklist[currentImg].auteur;
+            infoP[2].textContent = tracklist[currentImg].album;
+            infoP[3].textContent = tracklist[currentImg].annee;
+            document.querySelector("#div1080>div:last-of-type").classList.remove("fardOut");
+        }, 500)
+    }
     carousel.querySelector("#divT").classList.add("textFade");
     carousel.querySelector("#divT").classList.add("fardIn");
     setTimeout(() => {
@@ -119,7 +134,7 @@ const initNavigation = () => {
     commande.append(divBtn)
     const divNext = createNavBtn(divBtn, "divNext", "fa-caret-right");
     divNext.addEventListener("click", shuffleTrack)
-    
+
     const divPlay = createNavBtn(divBtn, "divPlay", "fa-play");
     divPlay.addEventListener("click", () => {
         currentTrack.paused ? currentTrack.play() : currentTrack.pause()
@@ -136,8 +151,8 @@ const initNavigation = () => {
 
     const divPrev = createNavBtn(divBtn, "divPrev", "fa-caret-left");
     divPrev.addEventListener("click", backTrack)
-   
+
     timePlayer()
-    
+
 }
-export { initNavigation, nextTrack,moveImageEffect,changTxt,shuffleTrack }
+export { initNavigation, nextTrack, moveImageEffect, changTxt, shuffleTrack }
