@@ -1,3 +1,4 @@
+import { initInfo } from "./initMusicBrainz.js";
 const css = (elem, style) => {
     for(const [key,value] of Object.entries(style)){
         elem.style[key] = value;
@@ -16,6 +17,7 @@ export const initTxt = () => {
     divTxt.append(p);
     div.append(divTxt)
     div.classList.add("dph")
+    initInfo()
     //css(div,{backgroundColor:"rgba(255, 63, 0, 0.61)", backdropFilter:"blur(8px)",position:"absolute",top:"0",zIndex:"3"})
     carousel.append(div)
 }

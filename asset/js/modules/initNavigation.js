@@ -1,3 +1,5 @@
+import { initInfo } from "./initMusicBrainz.js";
+
 const moveImageEffect = (classEffect) => {
     document.querySelector(".moveImage").classList.add("transEffect");
     document.querySelector(".fixedImage").src = `./asset/img/cover/${dataSlider[currentImg].urlImg}`;
@@ -47,6 +49,7 @@ const changTxt = () => {
         carousel.querySelector("p").textContent = dataSlider[currentImg].textContent;
         carousel.querySelector("#divT").classList.remove("fardOut");
     }, 500)
+    initInfo()
 }
 
 const timePlayer = () => {
