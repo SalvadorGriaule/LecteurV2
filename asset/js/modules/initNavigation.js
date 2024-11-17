@@ -28,8 +28,7 @@ const changTxt = () => {
     if (window.innerWidth > 1080) {
         document.querySelector("#div1080>div:last-of-type").classList.add("textFade");
         document.querySelector("#div1080>div:last-of-type").classList.add("fardIn");
-        let infoP = document.querySelectorAll("#div1080>div:last-of-type p")
-        console.log(infoP);
+        let infoP = document.querySelectorAll("#div1080>div:last-of-type p");
         setTimeout(() => {
             document.querySelector("#div1080>div:last-of-type").classList.remove("fardIn");
             document.querySelector("#div1080>div:last-of-type").classList.add("fardOut");

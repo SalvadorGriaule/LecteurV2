@@ -1,14 +1,23 @@
 import * as initN from "./initNavigation.js"
 
-export const createPDiv = (hideNum, ...arg) => {
+const createPDiv = (...arg) => {
     const div = document.createElement("div");
+    div.classList.add("infoInPL")
     for (let i = 0; i < arg.length; i++) {
         const pInsert = document.createElement("p");
         pInsert.textContent = arg[i];
-        if (i >= hideNum) pInsert.classList.add("hideP");
         div.append(pInsert)
     }
     return div
+}
+
+const hideP = (numStart, className) => {
+    const target = document.querySelectorAll("."+className)
+    for (let i = 0; target.length > 0 && i < target.length; i++) {
+        for (let j = numStart; j < target[i].children.length; j++){
+            target[i].children[j].classList.add("hideP")
+        }
+    }
 }
 
 const tabPL = (tab, target) => {
@@ -23,7 +32,7 @@ const tabPL = (tab, target) => {
     img.height = 45;
     divImg.append(img);
     let tabSend = tab[tab.length - 1]
-    const divP = createPDiv(2, tabSend.auteur, tabSend.titre, tabSend.album, tabSend.annee);
+    const divP = createPDiv(tabSend.auteur, tabSend.titre, tabSend.album, tabSend.annee);
 
     divPack.append(divImg);
     divPack.append(divP);
@@ -44,9 +53,12 @@ const tabPL = (tab, target) => {
     if (tab.length > 1) return tabPL(tab.slice(0, tab.length - 1), target)
 }
 
-export const playlist = () => {
+const playlist = () => {
     const divPL = document.createElement("div");
     divPL.id = "playlist"
     tabPL(tracklist, divPL)
     document.querySelector("#parent").after(divPL)
+    hideP(2,"infoInPL")
 }
+
+export { playlist, hideP, createPDiv }

@@ -49,7 +49,6 @@ main {
 
 #playlist {
     margin-block-start: 2vh;
-    width: 100%;
     background-color: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(5px);
     padding: 1vh 1vw;
@@ -86,15 +85,30 @@ main {
 }
 
 #side{
-    position: absolute;
+    position: fixed;
     z-index: 3;
     background-color: rgba(224, 141, 0, 1);
     height: 100%;
     right: 0;
     display: flex;
+    transition: transform 0.5s ease-in;
+    border-end-start-radius: 15px;
 }
 #sideButton{
-    background-color: rgba(214, 53, 1, 1);
+    width: 5px;
+    position: relative;
+}
+#sideButton .svgContent{
+    transform: rotate(-90deg) scaleX(250%);
+    right: -805%;
+    bottom: 50%;
+    position: absolute;
+}
+#side>div:last-of-type{
+    margin: 0.5rem;
+}
+.sideTranslateX{
+    transform: translateX(100%);
 }
 
 @media screen and (min-width:720px) {  
@@ -106,9 +120,7 @@ main {
         border-start-start-radius: 0;
         border-start-end-radius: 0;
         margin-block-start: 0;
-        
         width: 100%;
-        height: 100%;
     }
     .track>div:last-of-type{
         display: flex;
@@ -130,6 +142,9 @@ main {
     }
     .hideP{
         display: block;
+    }
+    #side{
+        top: 0;
     }
 }
 @media screen and (min-width:1080px) {

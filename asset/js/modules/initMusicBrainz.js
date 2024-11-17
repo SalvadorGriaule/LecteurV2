@@ -1,11 +1,19 @@
+import { breakPointAdd } from "./breakPoint.js"
+
 const loadSVG = async (filename) => {
-    let result;
     const content = document.createElement("div")
     content.classList.add("svgContent")
-    result = await fetch("./asset/img/svg/"+filename).then((val) => {return val.text()}).then((val) => {
+    await fetch("./asset/img/svg/"+filename).then((val) => {return val.text()}).then((val) => {
         content.innerHTML = val.substring(val.indexOf("<svg"));
     })
     return content
+}
+
+const breakPointSide = (div) => {
+    const plH = document.getElementById("playlist").clientHeight;
+    let divH = div.style.height
+    window.innerWidth >= 720 ? divH = plH+"px" : divH = "100%";
+    div.style.height = divH; 
 }
 
 const initInfo = async () => {
@@ -26,6 +34,7 @@ const initInfo = async () => {
     if(!document.getElementById("side")){
         const side = document.createElement("section");
         side.id = "side";
+        side.classList.add("sideTranslateX")
         document.getElementById("playlist").after(side)   
     }
     const sideBut = document.createElement("div")
@@ -33,11 +42,13 @@ const initInfo = async () => {
     side.append(sideBut)
     sideBut.id = "sideButton"
     sideBut.append(svg);
-    svg.querySelector("path").style.fill = "#d63501"
-    console.log();
-    
+    svg.querySelector("path").style.fill = "#e08d00"
+    svg.addEventListener("click",() => {
+        side.classList.toggle("sideTranslateX")
+    })
     side.append(div)
-
+    breakPointAdd(breakPointSide,side)
+    
 }
 
 export {loadSVG,initInfo}
