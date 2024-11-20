@@ -1,4 +1,5 @@
 import { initInfo } from "./initMusicBrainz.js";
+import { loadSVG, fillSVG } from "./initMusicBrainz.js";
 
 const moveImageEffect = (classEffect) => {
     document.querySelector(".moveImage").classList.add("transEffect");
@@ -21,6 +22,13 @@ const createNavBtn = (target, className, faClass) => {//next->fa-caret-right
     i.classList.add(faClass);
     div.append(i);
     return div;
+}
+
+const createNavSvg = async (target, className, svg) => {
+    const divSvg = await loadSVG(svg)
+    divSvg.classList.add(className)
+    target.append(divSvg)
+    return divSvg
 }
 
 const changTxt = () => {
@@ -127,22 +135,32 @@ const backTrack = () => {
     changTxt();
 }
 
-const initNavigation = () => {
+const initNavigation = async () => {
     const commande = document.createElement("div")
     commande.id = "commande";
     document.getElementById("parent").append(commande)
     const divBtn = document.createElement("div")
     divBtn.id = "commandeBtn"
     commande.append(divBtn)
+    
     const divNext = createNavBtn(divBtn, "divNext", "fa-caret-right");
     divNext.addEventListener("click", shuffleTrack)
-
-    const divPlay = createNavBtn(divBtn, "divPlay", "fa-play");
-    divPlay.addEventListener("click", () => {
-        currentTrack.paused ? currentTrack.play() : currentTrack.pause()
-        divPlay.querySelector("i").classList.toggle("fa-play");
-        divPlay.querySelector("i").classList.toggle("fa-pause");
-    })
+    
+    const pauseSvg = await loadSVG("pause.svg")    
+    fillSVG(pauseSvg,"#fff")
+    const divPlay = createNavSvg(divBtn, "divPlay", "lect.svg").then((val) => {
+        fillSVG(val,"#FFF")
+        const playSvg = val.querySelector("svg").outerHTML;
+        val.addEventListener("click", () => {
+            if (currentTrack.paused) {
+                currentTrack.play()
+                val.innerHTML = pauseSvg.innerHTML;
+            } else {
+                currentTrack.pause()
+                val.innerHTML = playSvg
+            }
+        })
+    });
 
     const divSense = createNavBtn(divBtn, "divSense", "fa-arrow-right-long")
     divSense.addEventListener("click", () => {

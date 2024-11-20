@@ -8,7 +8,6 @@ const img2Square = (number,...target) => {
 }
 
 const breakPointImg = (...img) => {
-    console.log(img,"img");
     let trackImg = document.querySelectorAll(".track img");
     if (window.innerWidth >= 1080 && !document.getElementById("div1080")) {
         const div1080 = document.createElement("div")
